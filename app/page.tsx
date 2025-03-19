@@ -24,7 +24,6 @@ export default function Home() {
         <title>Metro Area Removal Services | Home Services Company</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <meta name="description" content="Metro Area Removal Services is a family-owned company serving your removal needs. Learn about our services and get a free estimate." />
-        <link rel="stylesheet" href="/css/index.css" />
         <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
       </Head>
 
@@ -50,7 +49,18 @@ export default function Home() {
               <p>Hours Of Operation: 9am - 5pm EST</p>
               <p>A Metro area company serving you and your business needs, we are family-owned and devoted to serving the community.</p>
               <ul className="actions">
-                <li><Link href="#one" className="button next scrolly">Get Started</Link></li>
+                <li>
+                  <a
+                    href="#one"
+                    className="button next scrolly"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('one')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Get Started
+                    </a>
+                </li>
               </ul>
             </div>
           </div>
