@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Navbar from '@/app/components/Navbar';   // Replaces <x-nav-bar>
-import Contact from '@/app/components/Contact'; // Replaces <x-contact>
+import Contact from '@/components/Contact'; // Replaces <x-contact>
 import Footer from '@/app/components/Footer';   // Replaces <x-footer>
 
-export default function Services() {
+export default function HauledItems() {
   return (
     <>
       <Head>
