@@ -155,7 +155,7 @@ export default function Navbar({ name }) {
             <Link href="/hauled-items">Services</Link>
           </li>
           <li>
-            <Link href="/schedule-pickup">Schedule your haul</Link>
+            <Link href="/choose-service">Schedule your haul</Link>
           </li>
           <li>
             <Link href="/how-it-works">The Process</Link>

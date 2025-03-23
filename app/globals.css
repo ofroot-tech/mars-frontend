@@ -45,3 +45,8 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Labels as seen in the forms (online booking) */
+label {
+  color: black !important;
+}
