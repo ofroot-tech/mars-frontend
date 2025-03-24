@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Navbar from '@/app/components/Navbar';
-import Contact from '@/app/components/Contact';
-import Footer from '@/app/components/Footer';
+import Navbar from '@/components/Navbar';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 export default function About() {
   return (
