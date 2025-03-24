@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import Navbar from '@/app/components/Navbar';
-import Footer from '@/app/components/Footer';
-import '@/app/css/index.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import '@/css/index.css';
 
 export default function Home() {
   const [message, setMessage] = useState(null);
