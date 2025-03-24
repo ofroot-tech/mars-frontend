@@ -13,15 +13,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",                    // 👈 Required to use "paths"
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["app/*"]                // 👈 Makes "@/components/Contact" resolve to "app/components/Contact"
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/about/about.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/**/*.js"],
   "exclude": ["node_modules"]
 }
