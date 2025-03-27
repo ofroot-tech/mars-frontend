@@ -20,7 +20,8 @@
       }
     ],
     "paths": {
-      "@/*": ["app/*"]                // 👈 Makes "@/components/Contact" resolve to "app/components/Contact"
+      "@/*": ["app/*"],           // 👈 Makes "@/components/Contact" resolve to "app/components/Contact"
+      "@/components/*": ["app/components/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/**/*.js"],
