@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,17 +17,29 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",                    // 👈 Required to use "paths"
+    "baseUrl": ".", // 👈 Required to use "paths"
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["app/*"],           // 👈 Makes "@/components/Contact" resolve to "app/components/Contact"
-      "@/components/*": ["app/components/*"],
+      "@/*": [
+        "app/*"
+      ], // 👈 Makes "@/components/Contact" resolve to "app/components/Contact"
+      "@/components/*": [
+        "app/components/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/**/*.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "pages/**/*.js",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

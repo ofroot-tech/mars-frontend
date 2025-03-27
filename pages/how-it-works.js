@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Navbar from '@/app/components/Navbar';  // Replace with your actual navbar import
-import Footer from '@/app/components/Footer';  // Replace with your actual footer import
+import Navbar from '@/components/Navbar';  // Replace with your actual navbar import
+import Footer from '@/components/Footer';  // Replace with your actual footer import
 
 export default function HowItWorks() {
   return (
