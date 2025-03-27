@@ -1,15 +1,16 @@
-import path from "path";
-import type { NextConfig } from "next";
+const path = require("path");
 
-const nextConfig: NextConfig = {
-  webpack(config) {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  webpack: (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       "@": path.resolve(__dirname, "app"),
       "@/components": path.resolve(__dirname, "app/components"),
+      "@/app/components": path.resolve(__dirname, "app/components"),
     };
     return config;
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
