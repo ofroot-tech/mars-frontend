@@ -146,19 +146,19 @@ export default function Navbar({ name }) {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/about">About Us</Link>
+            <Link href="/info/about">About Us</Link>
           </li>
           <li>
-            <Link href="/pricing">Pricing</Link>
+            <Link href="/info/pricing">Pricing</Link>
           </li>
           <li>
-            <Link href="/hauled-items">Services</Link>
+            <Link href="/info/hauled-items">Services</Link>
           </li>
           <li>
-            <Link href="/choose-service">Schedule your haul</Link>
+            <Link href="/online-booking/service-selection">Schedule your haul</Link>
           </li>
           <li>
-            <Link href="/how-it-works">The Process</Link>
+            <Link href="/info/how-it-works">The Process</Link>
           </li>
           <li>
             <Link href="/online-booking/service-selection">Online Booking</Link>

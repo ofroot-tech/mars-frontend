@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Head from "next/head";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function StepThree() {
   const [formData, setFormData] = useState({

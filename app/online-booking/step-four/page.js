@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Navbar from '@/app/components/Navbar';
-import Footer from '@/app/components/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function ConfirmDetails() {

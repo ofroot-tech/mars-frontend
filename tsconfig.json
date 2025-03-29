@@ -38,7 +38,7 @@
     "next-env.d.ts",
     "app/pages/**/*.js",
     ".next/types/**/*.ts"
-, "next.config.js"  ],
+, "next.config.js", "app/info/removal-services/removal-services.js", "app/info/lawn-services/lawn-services.js", "app/info/hauled-items/hauled-items.js", "app/info/how-it-works/how-it-works.js", "app/contact/contact.js", "app/about/about.js"  ],
   "exclude": [
     "node_modules"
   ]
