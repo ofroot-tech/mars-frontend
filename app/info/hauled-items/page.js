@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Navbar from  '@/components/Navbar';   // Replaces <x-nav-bar>
-import Contact from '@/components/Contact'; // Replaces <x-contact>
+// import Contact from '@/components/Contact'; // Replaces <x-contact>
 import Footer from  '@/components/Footer';   // Replaces <x-footer>
 
 export default function HauledItems() {
@@ -168,7 +168,7 @@ export default function HauledItems() {
               <h1>Have a job for us?</h1>
             </header>
             <p>Contact us here for more information on our services and to receive a free estimate</p>
-            <Contact />
+            {/* <Contact /> */}
           </div>
         </section>
 

@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Navbar from  '@/components/Navbar';   // Replaces <x-nav-bar>
-import Contact from '@/components/Contact'; // Replaces <x-contact>
-import Footer from  '@/components/Footer';   // Replaces <x-footer>
+import Navbar from  '../../components/Navbar';   // Replaces <x-nav-bar>
+import Contact from '../../components/Contact'; // Replaces <x-contact>
+import Footer from  '../../components/Footer';   // Replaces <x-footer>
 
 export default function Pricing() {
   return (

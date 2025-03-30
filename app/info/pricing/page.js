@@ -1,7 +1,7 @@
 'use client';
 import Head from 'next/head';
 import Navbar from  '../../components/Navbar';   // Replaces <x-nav-bar>
-import Contact from '../../components/Contact'; // Replaces <x-contact>
+// import Contact from '../../components/Contact'; // Replaces <x-contact>
 import Footer from  '../../components/Footer';   // Replaces <x-footer>
 
 // This is the Pricing page
@@ -39,7 +39,7 @@ export default function Pricing() {
 
         {/* Contact Section */}
         <section>
-          <Contact />
+          {/* <Contact /> */}
         </section>
 
         {/* Footer */}

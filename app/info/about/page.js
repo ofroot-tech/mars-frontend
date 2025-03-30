@@ -1,7 +1,7 @@
 'use client';
 import Head from 'next/head';
 import Navbar from  '../../components/Navbar';
-import Contact from '../../components/Contact';
+// import Contact from '../../components/Contact';
 import Footer from  '../../components/Footer';
 
 
@@ -71,7 +71,7 @@ export default function About() {
         </main>
 
         {/* Contact Section */}
-        <Contact />
+        {/* <Contact /> */}
 
         {/* Footer */}
         <Footer />
