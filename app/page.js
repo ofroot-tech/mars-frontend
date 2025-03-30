@@ -75,8 +75,8 @@ export default function Home() {
                 <Image src="/images/pic01.jpg" alt="" width={400} height={300} />
               </span>
               <header className="major">
-                <h3><Link href="/pricing" className="link">HOW MUCH DOES IT COST?</Link></h3>
-                <p>Prices based on volume, <Link href="/pricing">click here to learn more</Link></p>
+                <h3><Link href="/info/pricing" className="link">HOW MUCH DOES IT COST?</Link></h3>
+                <p>Prices based on volume, <Link href="/info/pricing">click here to learn more</Link></p>
               </header>
             </article>
 
@@ -85,8 +85,8 @@ export default function Home() {
                 <Image src="/images/pic02.jpg" alt="" width={400} height={300} />
               </span>
               <header className="major">
-                <h3><Link href="/hauled-items" className="link">WHAT ITEMS DO WE TAKE?</Link></h3>
-                <p>To see the items available for hauling, <Link href="/hauled-items">click here to learn more</Link></p>
+                <h3><Link href="/info/hauled-items" className="link">WHAT ITEMS DO WE TAKE?</Link></h3>
+                <p>To see the items available for hauling, <Link href="/info/hauled-items">click here to learn more</Link></p>
               </header>
             </article>
 
@@ -95,8 +95,8 @@ export default function Home() {
                 <Image src="/images/pic03.jpg" alt="" width={400} height={300} />
               </span>
               <header className="major">
-                <h3><Link href="/schedule-pickup" className="link">WHEN CAN YOU PICK UP MY STUFF?</Link></h3>
-                <p>We offer prompt service, with options for either same-day or next-day appointments. <Link href="/schedule-pickup">Click here to learn more</Link></p>
+                <h3><Link href="/online-booking/service-selection" className="link">WHEN CAN YOU PICK UP MY STUFF?</Link></h3>
+                <p>We offer prompt service, with options for either same-day or next-day appointments. <Link href="/online-booking/service-selection">Click here to learn more</Link></p>
               </header>
             </article>
           </section>
