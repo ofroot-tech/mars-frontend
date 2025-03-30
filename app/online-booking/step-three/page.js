@@ -77,23 +77,9 @@ export default function StepThree() {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      // Store each input separately
-      localStorage.setItem("service_type", formData.serviceType);
-      localStorage.setItem("address", formData.address);
-      localStorage.setItem("unit", formData.unit);
-      localStorage.setItem("city", formData.city);
-      localStorage.setItem("state", formData.state);
-      localStorage.setItem("zip", formData.zip);
-      localStorage.setItem("country", formData.country);
-      localStorage.setItem("first_name", formData.firstName);
-      localStorage.setItem("last_name", formData.lastName);
-      localStorage.setItem("email", formData.email);
-      localStorage.setItem("phone_number", formData.phoneNumber);
-      localStorage.setItem("phone_type", formData.phoneType);
-      localStorage.setItem("items_to_remove", formData.itemsToRemove);
-      localStorage.setItem("date_of_removal", formData.dateOfRemoval);
-      localStorage.setItem("time_slot", formData.timeSlot);
-
+      Object.entries(formData).forEach(([key, value]) => {
+        localStorage.setItem(key, value);
+      });
       router.push("/online-booking/step-four");
     } catch (err) {
       console.error("Error storing Step-Three data:", err);
@@ -113,87 +99,137 @@ export default function StepThree() {
         />
       </Head>
 
-      <div className="container mt-4 pt-4">
-        <Navbar name="Online Booking" />
-        <p className="btn btn-success btn-sm rounded-pill mt-3 p-3">{formData.serviceType}</p>
+      <div id="wrapper">
+        <div className="container mt-4 pt-4 form-wrapper">
+          <Navbar name="Online Booking" />
+          <p className="btn btn-success btn-sm rounded-pill mt-3 p-3">{formData.serviceType}</p>
 
-        <form onSubmit={handleSubmit}>
-          {/* Address Section */}
-          <h2 className="mt-4">{labels.serviceLabel1}</h2>
-          <div className="form-group">
-            <label>Address:</label>
-            <input name="address" className="form-control" placeholder="e.g., 480 West Broad Street" value={formData.address} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label>Unit #:</label>
-            <input name="unit" className="form-control" placeholder="e.g., Unit #420" value={formData.unit} onChange={handleChange} />
-          </div>
-          <div className="form-row">
-            <div className="form-group col-md-6">
-              <label>City:</label>
-              <input name="city" className="form-control" placeholder="e.g., Columbus" value={formData.city} onChange={handleChange} />
+          <form onSubmit={handleSubmit}>
+            <h2 className="mt-4">{labels.serviceLabel1}</h2>
+
+            <div className="form-group">
+              <label>Address:</label>
+              <input name="address" className="form-control" placeholder="e.g., 480 West Broad Street" value={formData.address} onChange={handleChange} />
             </div>
-            <div className="form-group col-md-6">
-              <label>State:</label>
-              <input name="state" className="form-control" placeholder="e.g., Ohio" value={formData.state} onChange={handleChange} />
+            <div className="form-group">
+              <label>Unit #:</label>
+              <input name="unit" className="form-control" placeholder="e.g., Unit #420" value={formData.unit} onChange={handleChange} />
             </div>
-          </div>
-          <div className="form-group">
-            <label>ZIP Code:</label>
-            <input name="zip" className="form-control" placeholder="e.g., 77002" value={formData.zip} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label>Country:</label>
-            <input name="country" className="form-control" placeholder="e.g., USA" value={formData.country} onChange={handleChange} />
-          </div>
+            <div className="form-row">
+              <div className="form-group col-md-6">
+                <label>City:</label>
+                <input name="city" className="form-control" placeholder="e.g., Columbus" value={formData.city} onChange={handleChange} />
+              </div>
+              <div className="form-group col-md-6">
+                <label>State:</label>
+                <input name="state" className="form-control" placeholder="e.g., Ohio" value={formData.state} onChange={handleChange} />
+              </div>
+            </div>
+            <div className="form-group">
+              <label>ZIP Code:</label>
+              <input name="zip" className="form-control" placeholder="e.g., 77002" value={formData.zip} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label>Country:</label>
+              <input name="country" className="form-control" placeholder="e.g., USA" value={formData.country} onChange={handleChange} />
+            </div>
 
-          {/* Contact Details */}
-          <h2 className="mt-4">Contact Details</h2>
-          <div className="form-group">
-            <label>First Name:</label>
-            <input name="firstName" className="form-control" placeholder="e.g., Donny" value={formData.firstName} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label>Last Name:</label>
-            <input name="lastName" className="form-control" placeholder="e.g., Merkel" value={formData.lastName} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label>Email:</label>
-            <input name="email" type="email" className="form-control" placeholder="e.g., name@example.com" value={formData.email} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label>Phone Number:</label>
-            <input name="phoneNumber" type="tel" className="form-control" placeholder="e.g., 7344489999" value={formData.phoneNumber} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label>Phone Number Type:</label>
-            <select name="phoneType" className="form-control" value={formData.phoneType} onChange={handleChange}>
-              <option value="home">Home</option>
-              <option value="business">Business</option>
-            </select>
-          </div>
+            <h2 className="mt-4">Contact Details</h2>
 
-          {/* Service Details */}
-          <h2 className="mt-4">{labels.serviceLabel2}</h2>
-          <div className="form-group">
-            <input name="itemsToRemove" className="form-control" placeholder="List items being removed" value={formData.itemsToRemove} onChange={handleChange} />
-          </div>
+            <div className="form-group">
+              <label>First Name:</label>
+              <input name="firstName" className="form-control" placeholder="e.g., Donny" value={formData.firstName} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label>Last Name:</label>
+              <input name="lastName" className="form-control" placeholder="e.g., Merkel" value={formData.lastName} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label>Email:</label>
+              <input name="email" type="email" className="form-control" placeholder="e.g., name@example.com" value={formData.email} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label>Phone Number:</label>
+              <input name="phoneNumber" type="tel" className="form-control" placeholder="e.g., 7344489999" value={formData.phoneNumber} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label>Phone Number Type:</label>
+              <select name="phoneType" className="form-control" value={formData.phoneType} onChange={handleChange}>
+                <option value="home">Home</option>
+                <option value="business">Business</option>
+              </select>
+            </div>
 
-          <h2 className="mt-4">{labels.serviceLabel4}</h2>
-          <div className="form-group">
-            <select name="timeSlot" className="form-control" value={formData.timeSlot} onChange={handleChange}>
-              <option value="07:00 AM">7:00 AM - 9:00 AM</option>
-              <option value="09:00 AM">9:00 AM - 11:00 AM</option>
-              <option value="11:00 AM">11:00 AM - 1:00 PM</option>
-              <option value="01:00 PM">1:00 PM - 3:00 PM</option>
-            </select>
-          </div>
+            <h2 className="mt-4">{labels.serviceLabel2}</h2>
+            <div className="form-group">
+              <input name="itemsToRemove" className="form-control" placeholder="List items being removed" value={formData.itemsToRemove} onChange={handleChange} />
+            </div>
 
-          <button type="submit" className="btn btn-primary mt-3">Submit</button>
-        </form>
+            <h2 className="mt-4">{labels.serviceLabel4}</h2>
+            <div className="form-group">
+              <select name="timeSlot" className="form-control" value={formData.timeSlot} onChange={handleChange}>
+                <option value="07:00 AM">7:00 AM - 9:00 AM</option>
+                <option value="09:00 AM">9:00 AM - 11:00 AM</option>
+                <option value="11:00 AM">11:00 AM - 1:00 PM</option>
+                <option value="01:00 PM">1:00 PM - 3:00 PM</option>
+              </select>
+            </div>
 
-        <Footer />
+            <button type="submit" className="btn btn-primary mt-3">Submit</button>
+          </form>
+
+          <Footer />
+        </div>
       </div>
+
+      {/* Scoped CSS */}
+      <style jsx>{`
+        #wrapper {
+          background-color: #ffffff;
+          color: #000000;
+          padding: 2rem;
+        }
+
+        .form-wrapper {
+          background-color: #fafafa;
+          padding: 2rem;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        input,
+        select {
+          background-color: #fff;
+          color: #000;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 0.75rem;
+          width: 100%;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          margin-top: 2rem;
+          color: #000;
+        }
+
+        label {
+          font-weight: 500;
+        }
+
+        button[type='submit'] {
+          background-color: #007bff;
+          color: #fff;
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 5px;
+          transition: background-color 0.2s ease-in-out;
+        }
+
+        button[type='submit']:hover {
+          background-color: #0056b3;
+        }
+      `}</style>
     </>
   );
 }

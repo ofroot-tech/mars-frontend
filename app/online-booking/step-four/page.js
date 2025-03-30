@@ -79,40 +79,15 @@ export default function ConfirmDetails() {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossOrigin="anonymous"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
       </Head>
-
-      <style jsx>{`
-        h1 {
-          color: white;
-          }
-
-        .list-group-item {
-        .list-group-item,
-        h1,
-        strong,
-        p {
-          color: black !important;
-        }
-        .edit-icon {
-          cursor: pointer;
-          color: #007bff;
-        }
-
-        h1 {
-            color: white !important;
-        }
-
-        .list-group-item,
-        strong,
-        p {
-        color: black !important;
-        }
-
-      `}</style>
 
       <Navbar name="Online Booking" />
 
-      <div className="container mt-4 pt-4">
+      <div id="wrapper" className="container mt-4 pt-4">
         <p className="btn btn-success btn-sm rounded-pill">{formData.serviceType}</p>
         <h1>Confirm Details</h1>
 
@@ -180,7 +155,7 @@ export default function ConfirmDetails() {
           </li>
         </ul>
 
-        <form action="/api/submit-details" method="post" className="mt-2 pt-2">
+        <form action="/api/submit-details" method="post" className="mt-4 pt-2">
           <input type="hidden" name="service_type" value={formData.serviceType} />
           <button type="submit" className="btn btn-success mr-3">Confirm Details</button>
           <Link href="/online-booking/edit-information" className="btn btn-dark">Back</Link>
@@ -188,6 +163,49 @@ export default function ConfirmDetails() {
       </div>
 
       <Footer />
+
+      <style jsx>{`
+        #wrapper {
+          background-color: #ffffff;
+          color: #000000;
+          padding: 2rem;
+        }
+
+        h1 {
+          color: #000000;
+          margin-bottom: 1.5rem;
+        }
+
+        .list-group-item {
+          background-color: #fafafa;
+          border: 1px solid #ddd;
+          padding: 1rem;
+          font-size: 1rem;
+        }
+
+        strong {
+          color: #000000;
+        }
+
+        .edit-icon {
+          cursor: pointer;
+          color: #007bff;
+        }
+
+        .form-control {
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .btn {
+          margin-top: 1rem;
+        }
+
+        a.btn-dark {
+          text-decoration: none;
+          color: white;
+        }
+      `}</style>
     </>
   );
 }

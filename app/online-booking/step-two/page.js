@@ -16,7 +16,6 @@ export default function StepTwo() {
 
   const router = useRouter();
 
-  // Load service type from localStorage on component mount
   useEffect(() => {
     try {
       const storedServiceType = localStorage.getItem('service_type');
@@ -56,7 +55,7 @@ export default function StepTwo() {
       <div id="wrapper">
         <Navbar name="Online Booking" />
 
-        <div className="container mt-4">
+        <div className="container form-wrapper mt-4">
           <h1 className="text-center">Choose a Time Slot</h1>
 
           <form onSubmit={handleSubmit} className="mt-4">
@@ -64,7 +63,7 @@ export default function StepTwo() {
 
             <div className="form-group">
               <label className="text-dark">Choose a time slot:</label>
-              <p style={{ color: 'grey', fontSize: '75%' }}>
+              <p className="form-hint">
                 Click below and select a time slot. May vary depending on availability.
               </p>
               <select
@@ -85,7 +84,7 @@ export default function StepTwo() {
                   ? 'List details of the job'
                   : 'List the items you would like removed'}
               </label>
-              <p style={{ color: 'grey', fontSize: '75%' }}>
+              <p className="form-hint">
                 {serviceType === 'Lawn Service'
                   ? 'e.g., I have 3 areas I would like to have serviced'
                   : 'e.g., a mattress and a sofa in my basement'}
@@ -121,6 +120,57 @@ export default function StepTwo() {
 
         <Footer />
       </div>
+
+      <style jsx>{`
+        #wrapper {
+          background-color: #ffffff;
+          color: #000000;
+          padding: 2rem;
+        }
+
+        .form-wrapper {
+          max-width: 700px;
+          background-color: #fafafa;
+          padding: 2rem;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group select,
+        .form-group textarea,
+        .form-group input {
+          background-color: #ffffff;
+          color: #000000;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 0.75rem;
+          width: 100%;
+        }
+
+        .form-hint {
+          color: grey;
+          font-size: 0.8rem;
+          margin-top: 0.25rem;
+        }
+
+        h1 {
+          color: #000;
+          margin-bottom: 1.5rem;
+        }
+
+        button[type='submit'] {
+          background-color: #007bff;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          border-radius: 5px;
+          color: #fff;
+          transition: background-color 0.2s ease-in-out;
+        }
+
+        button[type='submit']:hover {
+          background-color: #0056b3;
+        }
+      `}</style>
     </>
   );
 }

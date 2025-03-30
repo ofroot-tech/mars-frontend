@@ -1,11 +1,12 @@
-"use client";
+'use client';
+
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import Head from 'next/head';
 import Link from 'next/link';
-import Navbar from '../../components/Navbar';  // Replace with your actual navbar import
-import Footer from '../../components/Footer';  // Replace with your actual footer import
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export default function Services() {
   const [selectedOption, setSelectedOption] = useState('');
@@ -46,7 +47,7 @@ export default function Services() {
                 <h1>Choose Your Service</h1>
               </header>
 
-              <div className="container">
+              <div className="form-container">
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
                     <select
@@ -91,7 +92,7 @@ export default function Services() {
         {/* Contact Section */}
         <section id="four">
           <div className="inner">
-            <section style={{ color: 'black' }}>
+            <section>
               <div className="contact-method">
                 <h3>Email</h3>
                 <a href="mailto:customerservice@metroarearemovalservices.com?subject=Estimate%20Request&body=I%20would%20like%20to%20request%20a%20free%20estimate">
@@ -118,6 +119,63 @@ export default function Services() {
         {/* Footer */}
         <Footer />
       </div>
+
+      {/* Scoped Styles */}
+      <style jsx>{`
+        #wrapper {
+          background: #ffffff;
+          color: #000000;
+          padding: 2rem;
+        }
+
+        .inner {
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .form-container {
+          background-color: #fafafa;
+          padding: 2rem;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          margin-top: 2rem;
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+          width: 100%;
+          padding: 0.75rem;
+          margin-top: 0.5rem;
+          margin-bottom: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #ffffff;
+          color: #000000;
+        }
+
+        h1, h3 {
+          color: #000;
+          margin-bottom: 1rem;
+        }
+
+        .contact-method {
+          margin-bottom: 1.5rem;
+        }
+
+        .contact-method a {
+          color: #000;
+          text-decoration: underline;
+        }
+
+        .contact-method a:hover {
+          color: #444;
+        }
+
+        ul {
+          padding-left: 1.2rem;
+        }
+      `}</style>
     </>
   );
 }
