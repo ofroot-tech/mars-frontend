@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export default function StepTwo() {
   const [serviceType, setServiceType] = useState('Removal Service');

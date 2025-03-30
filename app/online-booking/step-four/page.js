@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 
 export default function ConfirmDetails() {
   const [formData, setFormData] = useState({
