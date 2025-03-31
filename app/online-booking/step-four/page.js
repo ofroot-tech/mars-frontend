@@ -26,7 +26,10 @@ export default function ConfirmDetails() {
   });
 
   const [editMode, setEditMode] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState(null);
 
+  // Load data from localStorage on mount
   useEffect(() => {
     try {
       const data = {
@@ -68,21 +71,58 @@ export default function ConfirmDetails() {
     localStorage.setItem(field, value);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage(null);
+
+    const requiredFields = [
+      'firstName', 'lastName', 'email', 'phoneNumber', 'phoneType',
+      'address', 'city', 'state', 'zip', 'country',
+      'dateOfRemoval', 'timeSlot', 'serviceType', 'itemsToRemove',
+    ];
+
+    const missing = requiredFields.filter((field) => !formData[field]);
+    if (missing.length > 0) {
+      setMessage({
+        type: 'error',
+        text: `Missing required fields: ${missing.join(', ')}`,
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    console.log('Submitting formData:', formData);
+
+    try {
+      const response = await fetch('/api/online-booking/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage({ type: 'success', text: result.message });
+      } else {
+        setMessage({ type: 'error', text: result.error || 'Server error' });
+      }
+    } catch (err) {
+      console.error('Error submitting booking:', err);
+      setMessage({ type: 'error', text: 'Something went wrong. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Head>
         <title>Confirm Pickup Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
       </Head>
 
       <Navbar name="Online Booking" />
@@ -119,12 +159,14 @@ export default function ConfirmDetails() {
                   >
                     {key === 'phoneType' && (
                       <>
+                        <option value="">Select</option>
                         <option value="home">Home</option>
                         <option value="business">Business</option>
                       </>
                     )}
                     {key === 'timeSlot' && (
                       <>
+                        <option value="">Select</option>
                         <option value="07:00 AM">7:00 AM - 9:00 AM</option>
                         <option value="09:00 AM">9:00 AM - 11:00 AM</option>
                         <option value="11:00 AM">11:00 AM - 1:00 PM</option>
@@ -155,11 +197,25 @@ export default function ConfirmDetails() {
           </li>
         </ul>
 
-        <form action="/api/submit-details" method="post" className="mt-4 pt-2">
-          <input type="hidden" name="service_type" value={formData.serviceType} />
-          <button type="submit" className="btn btn-success mr-3">Confirm Details</button>
-          <Link href="/online-booking/edit-information" className="btn btn-dark">Back</Link>
+        {message && (
+          <div
+            className={`alert mt-3 ${message.type === 'success' ? 'alert-success' : 'alert-danger'}`}
+            role="alert"
+            aria-live="polite"
+          >
+            {message.text}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="mt-4 pt-2">
+          <button type="submit" className="btn btn-success mr-3" disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : 'Confirm Details'}
+          </button>
         </form>
+
+        <Link href="/online-booking/edit-information" className="btn btn-dark mt-3">
+          Back
+        </Link>
       </div>
 
       <Footer />
