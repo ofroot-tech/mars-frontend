@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import '../../css/online-booking.css';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
@@ -25,56 +25,52 @@ export default function Services() {
       <Head>
         <title>Services | Metro Area Removal Services</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link 
-          rel="stylesheet" 
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossOrigin="anonymous"
-        />
       </Head>
 
       <div id="wrapper">
-        {/* Navbar */}
         <div className="mb-3 pb-3">
           <Navbar name="Online Booking" />
         </div>
 
-        {/* Main Content */}
         <div id="main" className="alt">
           <section id="one">
             <div className="inner">
               <header className="major">
                 <h1>Choose Your Service</h1>
+                <p className="subheading">Start by selecting a service type below to continue your booking.</p>
               </header>
 
               <div className="form-container">
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
+                    <label htmlFor="service-select" className="form-label">Select a Service</label>
                     <select
+                      id="service-select"
                       className="form-control"
                       value={selectedOption}
                       onChange={(e) => setSelectedOption(e.target.value)}
                       required
                     >
-                      <option value="">Select an option</option>
+                      <option value="">Choose a service...</option>
                       <option value="removal-services">Removal Service</option>
                       <option value="lawn-services">Lawn Services</option>
                     </select>
-                    <button type="submit" className="btn btn-dark mt-4">Submit</button>
                   </div>
+                  <button type="submit" className="btn btn-dark btn-lg mt-3" disabled={!selectedOption}>
+                    Continue
+                  </button>
                 </form>
               </div>
             </div>
           </section>
         </div>
 
-        {/* Service Areas */}
         <section id="three">
           <div className="inner">
             <header className="major">
               <h1>Service Areas</h1>
             </header>
-            <ul>
+            <div className="grid-area">
               {[
                 "Ann Arbor, Michigan", "Ypsilanti, Michigan", "Belleville, Michigan",
                 "Canton, Michigan", "Garden City, Michigan", "Livonia, Michigan",
@@ -83,16 +79,15 @@ export default function Services() {
                 "Westland, Michigan", "Whitmore Lake, Michigan", "Wixom, Michigan",
                 "Romulus, Michigan"
               ].map((city) => (
-                <li key={city}>{city}</li>
+                <div key={city} className="city-item">{city}</div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
-        {/* Contact Section */}
         <section id="four">
           <div className="inner">
-            <section>
+            <section className="contact-section">
               <div className="contact-method">
                 <h3>Email</h3>
                 <a href="mailto:customerservice@metroarearemovalservices.com?subject=Estimate%20Request&body=I%20would%20like%20to%20request%20a%20free%20estimate">
@@ -107,7 +102,7 @@ export default function Services() {
 
               <div className="contact-method">
                 <h3>Socials</h3>
-                <ul>
+                <ul className="social-links">
                   <li><a href="https://www.facebook.com/profile.php?id=61550591346858&mibextid=LQQJ4d">Facebook</a></li>
                   <li><a href="https://www.instagram.com/metroarearemovalservices/">Instagram</a></li>
                 </ul>
@@ -116,66 +111,41 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Footer */}
         <Footer />
       </div>
 
-      {/* Scoped Styles */}
-      <style jsx>{`
-        #wrapper {
-          background: #ffffff;
-          color: #000000;
-          padding: 2rem;
-        }
+      <style jsx>
+        {
+          `
+            .btn-dark {
+              display: inline-flex; /* Use flexbox for alignment */
+              justify-content: center; /* Center text horizontally */
+              align-items: center; /* Center text vertically */
+              background-color: #000; /* Black background */
+              color: #fff; /* White text */
+              border: none;
+              padding: 0.75rem 1.5rem;
+              border-radius: 5px;
+              font-size: 1rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              cursor: pointer;
+              transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            }
 
-        .inner {
-          max-width: 800px;
-          margin: 0 auto;
-        }
+            .btn-dark:hover {
+              background-color: #333; /* Slightly lighter black on hover */
+            }
 
-        .form-container {
-          background-color: #fafafa;
-          padding: 2rem;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-          margin-top: 2rem;
+            .btn-dark:disabled {
+              background-color: #e0e0e0; /* Gray background for disabled state */
+              color: #666; /* Gray text for disabled state */
+              cursor: not-allowed;
+            }
+          `
         }
-
-        .form-group select,
-        .form-group input,
-        .form-group textarea {
-          width: 100%;
-          padding: 0.75rem;
-          margin-top: 0.5rem;
-          margin-bottom: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          background-color: #ffffff;
-          color: #000000;
-        }
-
-        h1, h3 {
-          color: #000;
-          margin-bottom: 1rem;
-        }
-
-        .contact-method {
-          margin-bottom: 1.5rem;
-        }
-
-        .contact-method a {
-          color: #000;
-          text-decoration: underline;
-        }
-
-        .contact-method a:hover {
-          color: #444;
-        }
-
-        ul {
-          padding-left: 1.2rem;
-        }
-      `}</style>
+      </style>
     </>
   );
+  
 }

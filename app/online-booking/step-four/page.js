@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
+import 'app/css/online-booking.css';
 
 export default function ConfirmDetails() {
   const [formData, setFormData] = useState({
@@ -128,7 +129,7 @@ export default function ConfirmDetails() {
       <Navbar name="Online Booking" />
 
       <div id="wrapper" className="container mt-4 pt-4">
-        <p className="btn btn-success btn-sm rounded-pill">{formData.serviceType}</p>
+        <p className="btn btn-service btn-sm rounded-pill">{formData.serviceType}</p>
         <h1>Confirm Details</h1>
 
         <ul className="list-group mt-3 pt-3">
@@ -260,6 +261,55 @@ export default function ConfirmDetails() {
         a.btn-dark {
           text-decoration: none;
           color: white;
+        }
+
+        .button-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-start; /* Align buttons to the left */
+    align-items: center; /* Center buttons vertically */
+    gap: 1rem; /* Add spacing between buttons */
+    margin-top: 1rem;
+  }
+
+  .btn {
+    display: inline-flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    text-decoration: none; /* Remove underline for links */
+  }
+
+  .btn:hover {
+    background-color: #333; /* Slightly lighter black on hover */
+  }
+
+  .btn:disabled {
+    background-color: #e0e0e0; /* Gray background for disabled state */
+    color: #666; /* Gray text for disabled state */
+    cursor: not-allowed;
+  }
+
+     /* Styling for the pill */
+        .btn-service {
+          background-color: #28a745; /* Green background */
+          color: #fff; /* White text */
+          font-size: 0.875rem; /* Small font size */
+          font-weight: 600; /* Slightly bold text */
+          padding: 0.5rem 1rem; /* Adjust padding for pill shape */
+          border-radius: 50px; /* Fully rounded corners for pill shape */
+          text-align: center; /* Center text inside the pill */
+          display: inline-block; /* Ensure it behaves like a pill */
+          text-transform: uppercase; /* Uppercase text for emphasis */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
       `}</style>
     </>

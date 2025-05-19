@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import 'app/css/online-booking.css';
 
 export default function Services() {
   const [zipCode, setZipCode] = useState('');
@@ -37,9 +38,9 @@ export default function Services() {
       <Head>
         <title>Services | Metro Area Removal Services</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossOrigin="anonymous" />
+          crossOrigin="anonymous" /> */}
       </Head>
 
       <div id="wrapper">
@@ -110,60 +111,51 @@ export default function Services() {
         <Footer />
       </div>
 
-      {/* Scoped CSS using styled-jsx */}
       <style jsx>{`
-        #wrapper {
-          background: #ffffff;
-          color: #000000;
-          padding: 2rem;
-        }
+  // .form-group {
+  //   display: flex;
+  //   flex-direction: column; /* Stack input and button vertically */
+  //   align-items: center; /* Center-align the button and input */
+  //   gap: 1rem; /* Add spacing between input and button */
+  // }
+      h1 {
+      color: black !important;
+      }
+.btn-dark {
+    display: inline-flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border: 2px solid #fff; /* White border */
+    padding: 0.75rem 1.25rem; /* Adjusted padding for better spacing */
+    font-size: 1rem; /* Standard font size */
+    font-weight: 600; /* Slightly bold text */
+    text-transform: uppercase; /* Uppercase text for emphasis */
+    border-radius: 8px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+    cursor: pointer; /* Pointer cursor for better UX */
+    text-align: center; /* Ensure text alignment */
+  }
 
-        .inner {
-          max-width: 800px;
-          margin: 0 auto;
-        }
+  .btn-dark:hover {
+    background-color: #40e0d0; /* Turquoise background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #40e0d0; /* Turquoise border on hover */
+  }
 
-        .form-container {
-          background-color: #fafafa;
-          padding: 2rem;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-          margin-top: 2rem;
-        }
+  .btn-dark:disabled {
+    background-color: #e0e0e0; /* Gray background for disabled state */
+    color: #666; /* Gray text for disabled state */
+    border: 1px solid #ccc; /* Gray border for disabled state */
+    cursor: not-allowed; /* Disabled cursor */
+  }
 
-        .form-group input {
-          width: 100%;
-          padding: 0.75rem;
-          margin-top: 0.5rem;
-          margin-bottom: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          background-color: #ffffff;
-          color: #000000;
-        }
-
-        h1, h3 {
-          color: #000;
-          margin-bottom: 1rem;
-        }
-
-        ul {
-          padding-left: 1.5rem;
-        }
-
-        li {
-          margin-bottom: 0.5rem;
-        }
-
-        a {
-          color: #000;
-          text-decoration: underline;
-        }
-
-        a:hover {
-          color: #444;
-        }
-      `}</style>
+  .btn-dark:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(64, 224, 208, 0.5); /* Turquoise focus ring */
+  }
+`}</style>
     </>
   );
 }

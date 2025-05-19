@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <style jsx>{`
         #footer {
-          /* Add your footer styling here or use external CSS */
+          color: white !important;
         }
         .inner {
           /* Additional styling for footer inner container */

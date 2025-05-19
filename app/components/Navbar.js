@@ -51,25 +51,26 @@ export default function Navbar({ name }) {
           transition: 0.3s;
         }
 
-        /* Menu Styling */
-        #menu {
-          position: fixed;
-          top: 60px;
-          left: 0;
-          width: 100%;
-          background: black;
-          z-index: 1100;
-          text-align: center;
-          padding: 15px 0;
+      /* Menu Styling */
+  #menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: black;
+    z-index: 1100;
+    text-align: center;
+    padding: 15px 0;
 
-          /* Smooth dropdown effect */
-          transform: ${menuOpen ? "translateY(0)" : "translateY(-150%)"};
-          transition: transform 0.3s ease-in-out;
+    /* Smooth dropdown effect */
+    transform: ${menuOpen ? "translateY(0)" : "translateY(-150%)"};
+    transition: transform 0.3s ease-in-out;
 
-          /* Allow clicking links when open */
-          pointer-events: ${menuOpen ? "auto" : "none"};
-          opacity: ${menuOpen ? "1" : "0"};
-        }
+    /* Allow clicking links when open */
+    pointer-events: ${menuOpen ? "auto" : "none"};
+    opacity: ${menuOpen ? "1" : "0"};
+  }
+
 
         /* Menu Links */
         .links {
@@ -83,7 +84,7 @@ export default function Navbar({ name }) {
         }
 
         .links a {
-          color: white;
+          color: white !important;
           text-decoration: none;
           font-size: 18px;
         }
@@ -119,6 +120,7 @@ export default function Navbar({ name }) {
           left: 0,
           width: "100%",
           background: "black",
+          color: "white",
           zIndex: 1100,
           textAlign: "center",
           padding: "15px 0",
@@ -135,10 +137,6 @@ export default function Navbar({ name }) {
           visibility: menuOpen ? 'visible' : 'hidden',
           opacity: menuOpen ? '1' : '0',
           position: 'absolute',
-          // The nuclear option: !important
-          // Note that React doesn't directly support !important,
-          // but we can do this trick using a template string for the style.
-          // (Slight hack: style objects don't allow !important.)
         }}
       >
         <ul className="links">

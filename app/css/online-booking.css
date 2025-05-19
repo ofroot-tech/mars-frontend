@@ -1,0 +1,182 @@
+#wrapper {
+    background: #ffffff; /* White background for the page */
+    color: #000000; /* Black text for the entire page */
+    padding: 2rem;
+}
+
+.inner {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.subheading {
+    font-size: 1rem;
+    color: #000; /* Black text for subheadings */
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.form-container {
+    background-color: #ffffff; /* White background for forms */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000; /* Black text for form labels */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.form-control {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #ffffff; /* White background for input fields */
+    color: #000; /* Black text for input fields */
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #000; /* Black border on focus */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-lg {
+    font-size: 1.125rem;
+    padding: 0.75rem 1rem;
+    background-color: #000; /* Black background for buttons */
+    color: #fff; /* White text for buttons */
+    border: 2px solid #fff; /* White outline for buttons */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    width: 100%;
+}
+
+.btn-lg:hover {
+    background-color: #40e0d0; /* Turquoise background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #40e0d0; /* Turquoise outline on hover */
+}
+
+.btn[disabled] {
+    background-color: #e0e0e0 !important;
+    color: #666 !important;
+    border: 1px solid #ccc;
+    opacity: 1 !important;
+    cursor: not-allowed;
+}
+
+section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+h1, h3 {
+    color: #000; /* Black text for headings */
+    margin-bottom: 1rem;
+}
+
+.grid-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding-left: 0;
+    margin-top: 2rem;
+}
+
+.city-item {
+    padding: 0.75rem 1rem;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #000; /* Black text for city items */
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.social-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-links li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-method {
+    margin-bottom: 1.5rem;
+}
+
+.contact-method a {
+    color: #000; /* Black text for links */
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.contact-method a:hover {
+    color: #40e0d0; /* Turquoise text on hover */
+}
+
+@media (max-width: 600px) {
+    #wrapper {
+        padding: 1rem;
+    }
+
+    .inner {
+        padding: 0 0.5rem;
+    }
+
+    header.major h1 {
+        font-size: 1.75rem;
+    }
+
+    .subheading {
+        font-size: 0.95rem;
+    }
+
+    .form-container {
+        padding: 1.25rem;
+    }
+
+    .form-label,
+    .form-control,
+    .btn-lg {
+        font-size: 0.95rem;
+    }
+
+    .btn-lg {
+        padding: 0.65rem 1rem;
+    }
+
+    .grid-area {
+        grid-template-columns: 1fr;
+    }
+
+    .city-item {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+}

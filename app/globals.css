@@ -12,13 +12,13 @@
 
 html,
 body {
-  max-width: 100vw;
+  max-width: 100vw; /* Prevent horizontal scrolling */
   overflow-x: hidden;
   height: 100%;
 }
 
 html {
-  font-size: 16px; /* or whatever base you prefer */
+  font-size: 16px; /* Base font size */
 }
 
 body {
@@ -29,24 +29,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Universal box-sizing reset */
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
+/* Link styles */
 a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none; /* Remove underline */
 }
 
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
 
-/* Labels as seen in the forms (online booking) */
-label {
-  color: black !important;
+/* Form label styles */
+form label {
+  color: black; /* Scoped to forms */
 }

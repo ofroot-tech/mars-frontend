@@ -7,6 +7,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import 'app/css/online-booking.css';
 
 export default function StepTwo() {
   const [serviceType, setServiceType] = useState('Removal Service');
@@ -59,7 +60,7 @@ export default function StepTwo() {
           <h1 className="text-center">Choose a Time Slot</h1>
 
           <form onSubmit={handleSubmit} className="mt-4">
-            <p className="btn btn-success btn-sm rounded-pill">{serviceType}</p>
+            <p className="btn btn-service btn-sm rounded-pill">{serviceType}</p>
 
             <div className="form-group">
               <label className="text-dark">Choose a time slot:</label>
@@ -159,16 +160,43 @@ export default function StepTwo() {
         }
 
         button[type='submit'] {
-          background-color: #007bff;
+          display: inline-flex; /* Use flexbox for alignment */
+          justify-content: center; /* Center text horizontally */
+          align-items: center; /* Center text vertically */
+          background-color: #000; /* Black background */
+          color: #fff; /* White text */
           border: none;
           padding: 0.75rem 1.5rem;
           border-radius: 5px;
-          color: #fff;
-          transition: background-color 0.2s ease-in-out;
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
         }
 
         button[type='submit']:hover {
-          background-color: #0056b3;
+          background-color: #333; /* Slightly lighter black on hover */
+        }
+
+        button[type='submit']:disabled {
+          background-color: #e0e0e0; /* Gray background for disabled state */
+          color: #666; /* Gray text for disabled state */
+          cursor: not-allowed;
+        }
+
+         /* Styling for the pill */
+        .btn-service {
+          background-color: #28a745; /* Green background */
+          color: #fff; /* White text */
+          font-size: 0.875rem; /* Small font size */
+          font-weight: 600; /* Slightly bold text */
+          padding: 0.5rem 1rem; /* Adjust padding for pill shape */
+          border-radius: 50px; /* Fully rounded corners for pill shape */
+          text-align: center; /* Center text inside the pill */
+          display: inline-block; /* Ensure it behaves like a pill */
+          text-transform: uppercase; /* Uppercase text for emphasis */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
       `}</style>
     </>
