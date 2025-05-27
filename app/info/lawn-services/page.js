@@ -56,7 +56,7 @@ export default function LawnServices() {
                       <td>Spring/Fall Cleanup</td>
                       <td>$150 – $400 one-time</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                       <td>Aeration</td>
                       <td>$50 – $120 per service</td>
                     </tr>
@@ -71,7 +71,7 @@ export default function LawnServices() {
                     <tr>
                       <td>Weed Control (per treatment)</td>
                       <td>$50 – $80</td>
-                    </tr>
+                    </tr> */}
                     <tr>
                       <td>Full Lawn Care Package (monthly)</td>
                       <td>$120 – $250</td>
