@@ -41,11 +41,11 @@ export default function ConfirmDetails() {
         state: localStorage.getItem('state') || '',
         zip: localStorage.getItem('zip') || '',
         country: localStorage.getItem('country') || '',
-        firstName: localStorage.getItem('first_name') || '',
-        lastName: localStorage.getItem('last_name') || '',
+        firstName: localStorage.getItem('firstName') || '',
+        lastName: localStorage.getItem('lastName') || '',
         email: localStorage.getItem('email') || '',
-        phoneNumber: localStorage.getItem('phone_number') || '',
-        phoneType: localStorage.getItem('phone_type') || '',
+        phoneNumber: localStorage.getItem('phoneNumber') || '',
+        phoneType: localStorage.getItem('phoneType') || '',
         dateOfRemoval: localStorage.getItem('date_of_removal') || '',
         timeSlot: localStorage.getItem('time_slot') || '',
         itemsToRemove: localStorage.getItem('items_to_remove') || '',
@@ -78,7 +78,9 @@ export default function ConfirmDetails() {
     setMessage(null);
 
     const requiredFields = [
-      'firstName', 'lastName', 'email', 'phoneNumber', 'phoneType',
+      'firstName', 'lastName',
+       'email',
+       'phoneNumber', 'phoneType',
       'address', 'city', 'state', 'zip', 'country',
       'dateOfRemoval', 'timeSlot', 'serviceType', 'itemsToRemove',
     ];
