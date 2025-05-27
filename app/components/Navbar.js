@@ -153,6 +153,9 @@ export default function Navbar({ name }) {
             <Link href="/info/hauled-items">Services</Link>
           </li>
           <li>
+            <Link href="/info/lawn-services">Lawn Care</Link>
+          </li>
+          <li>
             <Link href="/online-booking/service-selection">Schedule your haul</Link>
           </li>
           <li>
