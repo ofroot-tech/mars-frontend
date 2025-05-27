@@ -50,7 +50,7 @@ export async function POST(req) {
     // Send the email using Resend
     const data = await resend.emails.send({
       from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
-      to: ['dimitri.mcdaniel@gmail.com'],
+      to: ['customer.mar.services@gmail.com'],
       subject: `📦 New Booking from ${body.firstName} ${body.lastName}`,
       html: emailHtml,
     });
