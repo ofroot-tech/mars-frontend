@@ -276,7 +276,7 @@ export default function Home() {
         <span className="icon solid alt fa-envelope mb-2 block text-3xl text-blue-600"></span>
         <h3 className="text-xl font-semibold mb-1">Email</h3>
         <a
-          href="mailto:customerservice@metroarearemovalservices.com?subject=Estimate%20Request&body=I%20would%20like%20to%20request%20a%20free%20estimate"
+          href="mailto:customer.mar.services@gmail.com?subject=Estimate%20Request&body=I%20would%20like%20to%20request%20a%20free%20estimate"
           className="text-blue-600 hover:underline"
         >
           customer.mar.services@gmail.com

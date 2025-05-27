@@ -10,10 +10,10 @@ export default function Contact() {
               <span className="icon solid alt fa-envelope"></span>
               <h3>Email</h3>
               <a
-                href="mailto:customerservice@metroarearemovalservices.com
+                href="mailto:customer.mar.services@gmail.com
                       ?subject=Estimate%20Request&body=I%20would%20like%20to%20request%20a%20free%20estimate"
               >
-                customerservice@metroarearemovalservices.com
+                customer.mar.services@gmail.com
               </a>
             </div>
 
