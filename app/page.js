@@ -279,7 +279,7 @@ export default function Home() {
           href="mailto:customerservice@metroarearemovalservices.com?subject=Estimate%20Request&body=I%20would%20like%20to%20request%20a%20free%20estimate"
           className="text-blue-600 hover:underline"
         >
-          customerservice@metroarearemovalservices.com
+          customer.mar.services@gmail.com
         </a>
       </div>
 
