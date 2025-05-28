@@ -1,9 +1,12 @@
 import { Resend } from 'resend';
 
 export async function POST(req) {
+  console.log('trying to send the api to console');
   const resend = new Resend(process.env.RESEND_API_KEY);
-
+  
+  
   try {
+    console.log(resend);
     // Parse JSON body
     const body = await req.json();
 
@@ -50,7 +53,7 @@ export async function POST(req) {
     // Send the email using Resend
     const data = await resend.emails.send({
       from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
-      to: ['customer.mar.services@gmail.com'],
+      to: ['dimitri.mcdaniel@gmail.com'],
       subject: `📦 New Booking from ${body.firstName} ${body.lastName}`,
       html: emailHtml,
     });
